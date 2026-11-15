@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://de6kbsug6wckw"]
+
+[ext_resource type="Script" uid="uid://c0fmqckktsyga" path="res://sample.gd" id="1_lryxu"]
+[ext_resource type="Texture2D" uid="uid://s375cfpq25tp" path="res://pixil-frame-0(5).png" id="1_mifcs"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_eiqrc"]
+points = PackedVector2Array(-69.46, 39.12, -27, -36, 40, -32, 64, 39)
+
+[node name="Ice" type="Area2D" unique_id=695823129]
+script = ExtResource("1_lryxu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1832263434]
+texture = ExtResource("1_mifcs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1395728641]
+position = Vector2(6, 29)
+shape = SubResource("ConvexPolygonShape2D_eiqrc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
